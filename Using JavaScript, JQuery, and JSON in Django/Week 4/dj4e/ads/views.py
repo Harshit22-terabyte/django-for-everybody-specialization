@@ -140,4 +140,4 @@ class DeleteFavoriteView(LoginRequiredMixin, View):
         except Fav.DoesNotExist as e:
             pass
 
-        return HttpResponse()
+        return HttpResponse(redirect(reverse('ads:ad_detail', args=[pk])))
